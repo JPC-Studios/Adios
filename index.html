@@ -19,21 +19,28 @@ font-family:Georgia,serif;
 
 body{
 height:100vh;
-overflow:hidden;
+min-height:100vh;
+overflow-x:hidden;
+
 background:black;
 color:white;
+
 display:flex;
 justify-content:center;
 align-items:center;
+
+padding:20px;
 }
 
 /* ESPACIO */
 
 .space{
-position:absolute;
-width:200%;
-height:200%;
-animation:cameraMove 120s linear infinite;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
 }
 
 @keyframes cameraMove{
@@ -45,19 +52,21 @@ animation:cameraMove 120s linear infinite;
 /* GALAXIA */
 
 .galaxy{
+
 position:absolute;
-width:200%;
-height:200%;
+width:150%;
+height:150%;
+top:-25%;
+left:-25%;
+
 background:
 radial-gradient(circle at 40% 60%, rgba(200,200,255,.25), transparent 40%),
 radial-gradient(circle at 60% 40%, rgba(150,120,255,.2), transparent 45%);
-filter:blur(60px);
-animation:galaxyRotate 150s linear infinite;
-}
 
-@keyframes galaxyRotate{
-from{transform:rotate(0deg);}
-to{transform:rotate(360deg);}
+filter:blur(70px);
+
+animation:galaxyRotate 200s linear infinite;
+
 }
 
 /* ESTRELLAS */
@@ -171,15 +180,21 @@ to{opacity:1; transform:scale(1)}
 .container{
 
 position:relative;
+
 width:90%;
-max-width:800px;
+max-width:500px;
+
+margin:auto;
+
 padding:40px 25px;
 
 border-radius:20px;
-background:rgba(0,0,0,0.6);
+
+background:rgba(0,0,0,0.65);
 backdrop-filter:blur(10px);
 
 box-shadow:0 0 40px rgba(0,0,0,0.9);
+
 text-align:center;
 
 z-index:10;
@@ -237,14 +252,24 @@ color:#ffdede;
 
 @media (max-width:600px){
 
-.linea{
-width:120px;
+.saturn{
+top:5%;
+right:5%;
 }
 
-.ring{
-width:140px;
-height:45px;
-left:-25px;
+.moon{
+top:10%;
+left:5%;
+}
+
+.pluto{
+bottom:15%;
+right:15%;
+}
+
+.earth{
+bottom:10%;
+left:15%;
 }
 
 }
